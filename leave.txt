@@ -1,1 +1,5 @@
-100;Sick;Thursday 26 January, 2023;Friday 20 January, 2023;PENDING
+ Sick Thursday 26 January, 2023Saturday 28 January, 2023
+ Travel Thursday 19 January, 2023 Tuesday 24 January, 2023
+ Travel Thursday 19 January, 2023 Friday 27 January, 2023
+ Sick null null
+100;Sick;Thursday 19 January, 2023;Friday 13 January, 2023;PENDING

@@ -65,6 +65,7 @@ public class LoginPage extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		LoginPage frame = new LoginPage();
 		// Get the entered admin and password
 		String admin = adminField.getText();
 		char[] password = passwordField.getPassword();
@@ -72,10 +73,18 @@ public class LoginPage extends JFrame implements ActionListener {
 		// Check if the admin and password match
 		if (admin.equals("admin") && new String(password).equals("password")) {
 			JOptionPane.showMessageDialog(this,"Login Successfully!");
+			
+			LeaveApprovePage frame1 = new LeaveApprovePage();
+			frame1.setSize(400, 300);
+			frame1.setLocationRelativeTo(null); // Center the frame
+			frame1.setDefaultCloseOperation(LoginPage.EXIT_ON_CLOSE);
+			this.dispose();
+			
 		} 
-	 
+	
 		else {
 			JOptionPane.showMessageDialog(this,"Invalid admin or password.");
+			frame.dispose();
 		}
 	}
 

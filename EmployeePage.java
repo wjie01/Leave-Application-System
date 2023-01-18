@@ -58,7 +58,7 @@ public class EmployeePage implements ActionListener{
             frame.dispose();
         }
         if(e.getSource()==viewButton){
-            leavetable viewLeave = new leavetable(employeeid);
+            viewLeave viewLeave = new viewLeave(employeeid);
             frame.dispose();
         }
         if(e.getSource()==back){
