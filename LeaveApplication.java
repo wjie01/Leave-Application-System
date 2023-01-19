@@ -142,7 +142,7 @@ public class LeaveApplication extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == cancel) {
-            String employeeid = id.getText();
+            final String employeeid = id.getText();
 
             frame.dispose();
             EmployeePage employeePage = new EmployeePage(employeeid);

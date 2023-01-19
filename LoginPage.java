@@ -74,10 +74,7 @@ public class LoginPage extends JFrame implements ActionListener {
 		if (admin.equals("admin") && new String(password).equals("password")) {
 			JOptionPane.showMessageDialog(this,"Login Successfully!");
 			
-			LeaveApprovePage frame1 = new LeaveApprovePage();
-			frame1.setSize(400, 300);
-			frame1.setLocationRelativeTo(null); // Center the frame
-			frame1.setDefaultCloseOperation(LoginPage.EXIT_ON_CLOSE);
+			Admin frame1 = new Admin();
 			this.dispose();
 			
 		} 

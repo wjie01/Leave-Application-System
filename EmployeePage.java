@@ -51,7 +51,7 @@ public class EmployeePage implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         
-        String employeeid = id.getText();
+        final String employeeid = id.getText();
         
         if(e.getSource()==leaveButton){
             LeaveApplication leaveApplication = new LeaveApplication(employeeid);

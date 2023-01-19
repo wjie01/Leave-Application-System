@@ -66,7 +66,7 @@ class EmployeeLogin extends JFrame implements ActionListener {
 
 		// initialize found as false
 		boolean found = false;
-		String employeeid = id.getText();
+		final String employeeid = id.getText();
 
 		try {
 			Scanner scan = new Scanner(new File("empID.txt"));

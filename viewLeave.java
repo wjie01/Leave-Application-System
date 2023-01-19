@@ -87,7 +87,7 @@ public class viewLeave implements ActionListener {
         }
     }
 
-    //JFrame frame = new JFrame("View Leave Page");
+    // JFrame frame = new JFrame("View Leave Page");
     JFrame frame = new JFrame("Employee Applied Leave");
     JButton back = new JButton("Go Back");
     JTextField id = new JTextField();
@@ -97,20 +97,21 @@ public class viewLeave implements ActionListener {
 
         JTextField id = new JTextField();
         id = new JTextField(empid);
-        String employeeid = id.getText();
+        final String employeeid = id.getText();
 
-        //JPanel p = new JPanel(new GridLayout(2, 1));
+        // JPanel p = new JPanel(new GridLayout(2, 1));
 
-        //back.setBounds(50, 200, 100, 50);
-        back.setPreferredSize(new Dimension(50,50)); //17/1
+        // back.setBounds(50, 200, 100, 50);
+        back.setPreferredSize(new Dimension(50, 50)); // 17/1
         back.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EmployeePage employeePage = new EmployeePage(employeeid);
-			}
-		});
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                EmployeePage employeePage = new EmployeePage(employeeid);
+            }
+        });
 
         try {
-            //JFrame frame = new JFrame();
+            // JFrame frame = new JFrame();
             frame.setLayout(new BorderLayout());
 
             JTable table = new JTable();
@@ -121,7 +122,6 @@ public class viewLeave implements ActionListener {
             BufferedReader bufReader = new BufferedReader(reader);
 
             List<Leave> employeeList = new ArrayList<Leave>();
-
 
             while ((readLine = bufReader.readLine()) != null) {
                 String[] splitData = readLine.split(";");
@@ -137,24 +137,25 @@ public class viewLeave implements ActionListener {
             DatabaseTableModel tableModel = new DatabaseTableModel();
             tableModel.setList(employeeList);
             table.setModel(tableModel);
-            table.setPreferredSize(new Dimension(800, 100));
+            table.setPreferredSize(new Dimension(1000, 100));
             table.getTableHeader().setReorderingAllowed(false);
 
             String Columns[] = { "ID", "Leave Reason", "Start Date", "End Date", "Status" };
 
-            //p.add(table);
-            //p.add(back);
+            // p.add(table);
+            // p.add(back);
 
-            frame.add(table); //17/1
-            frame.add(back, BorderLayout.PAGE_END); //17/1
+            frame.add(table); // 17/1
+            frame.add(back, BorderLayout.PAGE_END); // 17/1
+            frame.add(new JScrollPane(table)); // 17/1
 
-            frame.add(new JScrollPane(table)); //17/1
-
-            //frame.setTitle("Employee Applied Leave");
+            // frame.setTitle("Employee Applied Leave");
             frame.setLocationRelativeTo(null);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
+            
+            frame.setLocation(600, 100);
 
         } catch (IOException ex) {
         }
