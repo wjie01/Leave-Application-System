@@ -226,7 +226,7 @@ public class LeaveApprovePage extends JFrame {
 
         JTextField id = new JTextField();
 
-        String employeeid = id.getText();
+        final String employeeid = id.getText();
 
         statusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
